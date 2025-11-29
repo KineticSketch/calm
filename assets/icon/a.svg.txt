@@ -1,0 +1,16 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 左下折线：蓝 -->
+  <path d="M 50 210 L 150 120" stroke="#4285F4" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 左上折线：红 -->
+  <path d="M 50 90 L 150 180" stroke="#DB4437" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 右上折线：黄 -->
+  <path d="M 150 180 L 250 90" stroke="#F4B400" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 右下折线：绿 -->
+  <path d="M 150 120 L 250 210" stroke="#0F9D58" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 签到打点：Google 蓝 -->
+  <circle cx="150" cy="60" r="22" fill="#4285F4"/>
+</svg>

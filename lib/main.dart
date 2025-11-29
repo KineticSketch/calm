@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:toastification/toastification.dart';
+import 'package:dynamic_color/dynamic_color.dart';
 import 'theme/app_theme.dart';
 import 'screens/main_screen.dart';
 import 'providers/signin_provider.dart';
@@ -29,13 +30,17 @@ class MyApp extends StatelessWidget {
     final themeProvider = context.watch<ThemeProvider>();
 
     return ToastificationWrapper(
-      child: MaterialApp(
-        title: 'calm',
-        theme: AppTheme.light,
-        darkTheme: AppTheme.dark,
-        themeMode: themeProvider.themeMode,
-        home: const MainScreen(),
-        debugShowCheckedModeBanner: false,
+      child: DynamicColorBuilder(
+        builder: (lightDynamic, darkDynamic) {
+          return MaterialApp(
+            title: 'calm',
+            theme: AppTheme.light(lightDynamic),
+            darkTheme: AppTheme.dark(darkDynamic),
+            themeMode: themeProvider.themeMode,
+            home: const MainScreen(),
+            debugShowCheckedModeBanner: false,
+          );
+        },
       ),
     );
   }

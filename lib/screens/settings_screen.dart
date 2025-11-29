@@ -22,8 +22,8 @@ class SettingsScreen extends StatelessWidget {
         children: [
           // Data Management
           ListTile(
-            leading: const Icon(Icons.file_upload),
-            title: const Text('导出数据 (分享)'),
+            leading: const Icon(Icons.share_outlined),
+            title: const Text('分享'),
             onTap: () async {
               final jsonString = signInProvider.exportData();
               final directory = await getTemporaryDirectory();
@@ -33,8 +33,8 @@ class SettingsScreen extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.save),
-            title: const Text('保存到文件'),
+            leading: const Icon(Icons.file_download_outlined),
+            title: const Text('导出'),
             onTap: () async {
               try {
                 final jsonString = signInProvider.exportData();
@@ -53,8 +53,8 @@ class SettingsScreen extends StatelessWidget {
                   if (context.mounted) {
                     toastification.show(
                       context: context,
-                      title: const Text('保存成功'),
-                      description: Text('已保存至: ${file.path}'),
+                      title: const Text('导出成功'),
+                      description: Text('已导出至: ${file.path}'),
                       type: ToastificationType.success,
                       autoCloseDuration: const Duration(seconds: 3),
                     );
@@ -71,8 +71,8 @@ class SettingsScreen extends StatelessWidget {
                 if (context.mounted) {
                   toastification.show(
                     context: context,
-                    title: const Text('保存成功'),
-                    description: const Text('已保存至 Download 文件夹'),
+                    title: const Text('导出成功'),
+                    description: const Text('已导出至 Download 文件夹'),
                     type: ToastificationType.success,
                     autoCloseDuration: const Duration(seconds: 3),
                   );
@@ -81,7 +81,7 @@ class SettingsScreen extends StatelessWidget {
                 if (context.mounted) {
                   toastification.show(
                     context: context,
-                    title: const Text('保存失败'),
+                    title: const Text('导出失败'),
                     description: Text(e.toString()),
                     type: ToastificationType.error,
                     autoCloseDuration: const Duration(seconds: 3),
@@ -91,8 +91,8 @@ class SettingsScreen extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.file_download),
-            title: const Text('导入数据 (JSON)'),
+            leading: const Icon(Icons.file_upload_outlined),
+            title: const Text('导入'),
             onTap: () async {
               FilePickerResult? result = await FilePicker.platform.pickFiles();
               if (result != null) {
@@ -113,8 +113,8 @@ class SettingsScreen extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.delete_forever, color: Colors.red),
-            title: const Text('清除所有数据', style: TextStyle(color: Colors.red)),
+            leading: const Icon(Icons.clear_all_outlined, color: Colors.red),
+            title: const Text('清除数据', style: TextStyle(color: Colors.red)),
             onTap: () {
               showDialog(
                 context: context,
@@ -151,8 +151,8 @@ class SettingsScreen extends StatelessWidget {
 
           // QR Code Transfer
           ListTile(
-            leading: const Icon(Icons.qr_code),
-            title: const Text('二维码分享数据'),
+            leading: const Icon(Icons.qr_code_2_outlined),
+            title: const Text('分享'),
             onTap: () {
               final data = signInProvider.exportData();
               showDialog(
@@ -175,8 +175,8 @@ class SettingsScreen extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.qr_code_scanner),
-            title: const Text('扫描二维码导入'),
+            leading: const Icon(Icons.qr_code_scanner_outlined),
+            title: const Text('导入'),
             onTap: () {
               Navigator.push(
                 context,

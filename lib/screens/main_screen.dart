@@ -34,9 +34,9 @@ class _MainScreenState extends State<MainScreen> {
         color: isDark ? Colors.grey[600] : Colors.white70,
         activeColor: isDark ? Theme.of(context).primaryColor : Colors.white,
         items: const [
-          TabItem(icon: Icons.home),
-          TabItem(icon: Icons.calendar_month),
-          TabItem(icon: Icons.settings),
+          TabItem(icon: Icons.home_outlined),
+          TabItem(icon: Icons.calendar_month_outlined),
+          TabItem(icon: Icons.settings_outlined),
         ],
         initialActiveIndex: _currentIndex,
         onTap: (int i) => setState(() => _currentIndex = i),

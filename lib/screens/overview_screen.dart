@@ -70,7 +70,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
         scrolledUnderElevation: 0,
         actions: [
           IconButton(
-            icon: const Icon(Icons.history),
+            icon: const Icon(Icons.pie_chart_outline),
             onPressed: () {
               Navigator.push(
                 context,
